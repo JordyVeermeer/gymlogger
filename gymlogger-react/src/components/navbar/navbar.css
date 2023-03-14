@@ -1,0 +1,18 @@
+.navbar {
+    background-color: #181D27;
+    color: #92AA83;
+    display: flex;
+}
+
+.navLeft {
+    padding-left: 5vw;
+    width: 50%;
+}
+
+.navbarRight > ul {
+    
+}
+
+.navbarItem {
+    display: inline;
+}
