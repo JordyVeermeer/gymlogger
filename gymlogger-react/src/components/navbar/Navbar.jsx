@@ -15,7 +15,7 @@ export default function Navbar() {
     return (
         <div className="navbar">
             <div className='navLeft'>
-                <h1>GymLogger</h1>
+                <Link to="/"><h1>GymLogger</h1></Link>
             </div>
             <div className='navRight'>
                 <ul>
