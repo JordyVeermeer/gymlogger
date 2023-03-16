@@ -9,10 +9,35 @@
     width: 50%;
 }
 
-.navbarRight > ul {
-    
+.navRight {
+    width: 50%;    
+}
+
+ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    margin: 0;
 }
 
 .navbarItem {
     display: inline;
+}
+
+a {
+    text-decoration: none;
+    color:#92AA83;
+}
+
+a:hover {
+    border-bottom: 1px solid #92AA83;
+}
+
+.logInButton {
+    padding: 10px;
+    border: 1px solid #92AA83;
+    border-radius: 15%;
+    background-color: #92AA83;
+    color: black;
 }
