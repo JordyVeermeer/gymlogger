@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import './searchpage.css';
+import { COLORS } from "../../values/colors";
 
 export default function SearchPage() {
 
@@ -7,7 +8,9 @@ export default function SearchPage() {
         console.log("Search page gerendered!");
     });
 
-    return <div className="searchpage">
+    return (
+    <div className="searchpage">
         <h1>Search page!</h1>
-    </div>;
+    </div>
+    );
 }
