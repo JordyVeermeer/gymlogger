@@ -1,0 +1,23 @@
+.exercise-short {
+    background-color: white;
+    display: inline-block;
+    padding: 2vw;
+    border-radius: 25px;
+}
+
+.exercise-short > h1 {
+    font-size: 1vw;
+}
+
+.exercise-short > p {
+    font-size: 0.7vw;
+}
+
+.image {
+    width: 10vw;
+}
+
+.exercise-list {
+    display: flex;
+    justify-content: space-around;
+}

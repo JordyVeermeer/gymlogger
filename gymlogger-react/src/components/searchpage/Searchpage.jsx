@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import * as exerciseAPI from "../../api/exercises";
+import ExerciseList from "../exercises/ExerciseList";
 import './searchpage.css';
-import { COLORS } from "../../values/colors";
 
 export default function SearchPage() {
 
@@ -23,9 +23,8 @@ export default function SearchPage() {
     <div className="searchpage">
         <h1>Search page!</h1>
         { 
-            exerciseList ? exerciseList.map(i => {
-                return <p>{i.name}</p>;
-            })
+            exerciseList ? 
+            <ExerciseList exerciseList={exerciseList} />
             : <p>No exercises found.</p>
         }
     </div>
