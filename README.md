@@ -11,8 +11,8 @@ I'm making this app to aid me and my friends in our fitness journeys while gaini
 | What part | Technology used |
 | --- | ---|
 | Frontend | React (CRA) |
-| Backend | Node.js, Express.js |
-| Database | TBD |
+| Backend | Spring Boot |
+| Database | MS SQL, TSQL |
 
 ## Contact
 
