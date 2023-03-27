@@ -7,5 +7,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ExerciseRepository extends JpaRepository<Exercise, Long> {
-
+    // nog findByName method toevoegen
+    // https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
 }

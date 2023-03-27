@@ -16,11 +16,22 @@ public class Exercise {
     private String description;
 
     protected Exercise() {}
-    public Exercise(String name, String muscle, String description) {
+
+    public Exercise(Long id, String name, String muscle, String description) {
+        this.id = id;
         this.name = name;
         this.muscle = muscle;
         this.description = description;
     }
+
+    /* public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    } */
+
     public String getName() {
         return name;
     }

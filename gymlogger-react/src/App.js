@@ -3,6 +3,7 @@ import ErrorPage from './components/ErrorPage';
 import SearchPage from './components/searchpage/Searchpage';
 import './App.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Exercise from './components/exercises/Exercise';
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
       {
         path: "search",
         element: <SearchPage />,
+      },
+      {
+        path: "exercise/:id",
+        element: <Exercise />,
       }
     ]
   },

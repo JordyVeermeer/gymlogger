@@ -1,8 +1,10 @@
 .exercise-short {
-    background-color: white;
+    background-color: #92AA83;
     display: inline-block;
     padding: 2vw;
     border-radius: 25px;
+    color: #181D27;
+    width: 10vw;
 }
 
 .exercise-short > h1 {
@@ -15,6 +17,7 @@
 
 .image {
     width: 10vw;
+    margin: auto;
 }
 
 .exercise-list {
