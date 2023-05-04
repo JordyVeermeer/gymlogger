@@ -1,23 +1,35 @@
 .exercise-short {
     background-color: #92AA83;
     display: inline-block;
-    padding: 2vw;
+    border: 5px solid #92AA83;
     border-radius: 25px;
     color: #181D27;
-    width: 10vw;
+    width: 12vw;
+    height: 30vh;
 }
 
-.exercise-short > h1 {
-    font-size: 1vw;
+.card-header {
+    overflow: hidden;
+    height: 15vh;
 }
 
-.exercise-short > p {
+.card-content {
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+.card-content > h1 {
+    font-size: 0.9vw;
+}
+
+.card-content > p {
     font-size: 0.7vw;
 }
 
 .image {
-    width: 10vw;
-    margin: auto;
+    width: 100%;
+    border-radius: 25px 25px 0px 0px;
+    /* margin: auto; */
 }
 
 .exercise-list {

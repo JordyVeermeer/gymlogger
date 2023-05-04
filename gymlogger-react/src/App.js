@@ -4,6 +4,7 @@ import SearchPage from './components/searchpage/Searchpage';
 import './App.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Exercise from './components/exercises/Exercise';
+import { ExerciseProvider } from './contexts/ExerciseContext';
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,7 @@ const router = createBrowserRouter([
         element: <SearchPage />,
       },
       {
-        path: "exercise/:id",
+        path: "exercise/:name",
         element: <Exercise />,
       }
     ]
@@ -25,7 +26,9 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <RouterProvider router={router}/>
+    <ExerciseProvider>
+      <RouterProvider router={router}/>
+    </ExerciseProvider>
   );
 }
 

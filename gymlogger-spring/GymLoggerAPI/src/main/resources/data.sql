@@ -20,3 +20,9 @@ VALUES('1601', 'Curl barbell towards shoulders', 'Bicep', 'Barbell Bicep Curl');
 
 INSERT INTO exercise (id, description, muscle, name) 
 VALUES('1602', 'Lift dumbbell to shoulder height in a lateral motion', 'Shoulders', 'Shoulder Lateral Raises');
+
+INSERT INTO exercise (id, description, muscle, name)
+VALUES('1603', 'Squat down while keeping barbell upright', 'Legs', 'Barbell Squat');
+
+INSERT INTO exercise (id, description, muscle, name)
+VALUES('1602', 'Pick up barbell', 'Legs, Back', 'Deadlift');
