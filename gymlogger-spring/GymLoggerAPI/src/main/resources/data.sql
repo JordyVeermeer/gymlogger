@@ -25,4 +25,4 @@ INSERT INTO exercise (id, description, muscle, name)
 VALUES('1603', 'Squat down while keeping barbell upright', 'Legs', 'Barbell Squat');
 
 INSERT INTO exercise (id, description, muscle, name)
-VALUES('1602', 'Pick up barbell', 'Legs, Back', 'Deadlift');
+VALUES('1604', 'Pick up barbell', 'Legs, Back', 'Deadlift');

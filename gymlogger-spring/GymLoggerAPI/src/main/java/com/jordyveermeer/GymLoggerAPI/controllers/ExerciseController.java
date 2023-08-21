@@ -22,7 +22,7 @@ public class ExerciseController {
     };
 
     @GetMapping("/{name}")
-    public Exercise exerciseByName(@PathVariable String name) { return exerciseRepo.getByName(name); };
+    public Exercise exerciseByName(@PathVariable String name) { return exerciseRepo.findByName(name); };
 
     @GetMapping("/muscle/{muscle}")
     public List<Exercise> exercisesByMuscle(@PathVariable String muscle) { return exerciseRepo.findByMuscle(muscle); };
