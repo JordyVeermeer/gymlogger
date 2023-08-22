@@ -9,8 +9,6 @@ import java.util.List;
 
 @Repository
 public interface ExerciseRepository extends JpaRepository<Exercise, Long> {
-    // nog findByName method toevoegen
-    // https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
     @Query("SELECT e FROM Exercise e WHERE e.muscle = ?1")
     List<Exercise> findByMuscle(String muscle);
 

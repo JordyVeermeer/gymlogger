@@ -1,9 +1,8 @@
 package com.jordyveermeer.GymLoggerAPI.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Exercise {
@@ -14,6 +13,8 @@ public class Exercise {
     private String name;
     private String muscle;
     private String description;
+    @ManyToMany(mappedBy = "exercises")
+    private List<Workout> workouts;
 
     protected Exercise() {}
 
