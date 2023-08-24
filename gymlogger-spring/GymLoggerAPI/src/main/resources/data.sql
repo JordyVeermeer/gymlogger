@@ -26,3 +26,12 @@ VALUES('1603', 'Squat down while keeping barbell upright', 'Legs', 'Barbell Squa
 
 INSERT INTO exercise (id, description, muscle, name)
 VALUES('1604', 'Pick up barbell', 'Legs, Back', 'Deadlift');
+
+INSERT INTO exercise (id, description, muscle, name)
+VALUES('1605', 'Hammer curl dumbbell', 'Bicep', 'Dumbbell Hammer Curl');
+
+INSERT INTO exercise (id, description, muscle, name)
+VALUES('1606', 'Press dumbbells upwards', 'Shoulders', 'Shoulder Dumbbell Press');
+
+INSERT INTO exercise (id, description, muscle, name)
+VALUES('1604', 'Pull arms towards each-other with straight arms', 'Chest', 'Cable Fly');
