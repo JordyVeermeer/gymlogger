@@ -34,4 +34,4 @@ INSERT INTO exercise (id, description, muscle, name)
 VALUES('1606', 'Press dumbbells upwards', 'Shoulders', 'Shoulder Dumbbell Press');
 
 INSERT INTO exercise (id, description, muscle, name)
-VALUES('1604', 'Pull arms towards each-other with straight arms', 'Chest', 'Cable Fly');
+VALUES('1607', 'Pull arms towards each-other with straight arms', 'Chest', 'Cable Fly');

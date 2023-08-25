@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import './navbar.css';
+import { AuthenticationButton } from '../authentication/AuthenticationButton';
 
 function NavbarItem({label, to, className}) {
     return (
@@ -22,7 +23,7 @@ export default function Navbar() {
                     <NavbarItem label="Search" to="/search" />
                     <NavbarItem label="My Schedule" to="/myschedule" />
                     <NavbarItem label="Progress" to="/progress" />
-                    <NavbarItem className="logInButton" label="Log In" to="/login" />
+                    <AuthenticationButton />
                 </ul>
             </div>
         </div>

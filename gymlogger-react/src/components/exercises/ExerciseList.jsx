@@ -14,7 +14,7 @@ export default function ExerciseList() {
     return (
         <div className='exercise-list'>
             {
-                exercises.length > 0 ?
+                exercises != null && exercises.length > 0 ?
                 exercises.map(e => {
                     return <ExerciseShort exercise={e} />
                 })
