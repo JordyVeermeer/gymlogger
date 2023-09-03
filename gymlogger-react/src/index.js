@@ -12,8 +12,12 @@ root.render(
       domain='dev-dwjylcygmkes8a40.eu.auth0.com'
       clientId='8c7K8y5cO1wtMvMxSZv3Tg1fBL2PmYjR'
       authorizationParams={{
-        redirect_uri: window.location.origin
+        redirect_uri: window.location.origin,
+        audience: `${process.env.REACT_APP_AUTH0_API_AUDIENCE}`,
+        scope: "read:current_user update:current_user_metadata",
       }}
+      useRefreshTokens
+      cacheLocation='localstorage'
     >
       <App />
     </Auth0Provider>

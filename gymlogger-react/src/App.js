@@ -5,6 +5,7 @@ import './App.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Exercise from './components/exercises/Exercise';
 import { ExerciseProvider } from './contexts/ExerciseContext';
+import { Homepage } from './components/Homepage';
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
+      {
+        path: "/",
+        element: <Homepage />,
+      },
       {
         path: "search",
         element: <SearchPage />,

@@ -31,7 +31,7 @@ public class SecurityConfig  {
                 (authz) -> {
                     try {
                         // authentication for all routes except /exercises/..
-                        authz.requestMatchers(HttpMethod.GET, "/exercises/**").permitAll()
+                        authz //.requestMatchers("/exercises/**", "/users").permitAll()
                                 .anyRequest()
                                 .authenticated()
                                 .and()
