@@ -8,12 +8,16 @@ import jakarta.persistence.Table;
 @Table(name = "users")
 public class User {
     @Id
-    private Long user_id;
+    private String user_id;
     private String username;
 
     protected User() {};
 
-    public User(Long id, String username) {
+    public User(String id) {
+        this.user_id = id;
+    }
+
+    public User(String id, String username) {
         this.user_id = id;
         this.username = username;
     }
