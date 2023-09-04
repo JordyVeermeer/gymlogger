@@ -1,21 +1,33 @@
 package com.jordyveermeer.GymLoggerAPI.controllers;
 
 import com.jordyveermeer.GymLoggerAPI.models.Workout;
-import com.jordyveermeer.GymLoggerAPI.repositories.WorkoutRepository;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.jordyveermeer.GymLoggerAPI.services.UserService;
+import com.jordyveermeer.GymLoggerAPI.services.WorkoutService;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.http.HttpHeaders;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 @RequestMapping("workouts")
 public class WorkoutController {
-    private final WorkoutRepository workoutRepo;
+    private final WorkoutService workoutService;
+    private final UserService userService;
 
-    public WorkoutController(WorkoutRepository workoutRepo) { this.workoutRepo = workoutRepo; }
+    public WorkoutController(WorkoutService workoutService, UserService userService) {
+        this.workoutService = workoutService;
+        this.userService = userService;
+    }
 
     @GetMapping()
-    public List<Workout> workouts() { return workoutRepo.findAll(); }
+    public List<Workout> getWorkoutsByUserId(@RequestHeader(HttpHeaders.AUTHORIZATION) String authHeader) {
+        String user_id = userService.jwtIdExtractor(authHeader);
+
+        return workoutService.getAllWorkoutsOfUser(user_id);
+    }
+
+    @PostMapping()
+    public void createWorkout(@RequestHeader(HttpHeaders.AUTHORIZATION) String authHeader, @RequestBody Workout workout) {
+
+    }
 }

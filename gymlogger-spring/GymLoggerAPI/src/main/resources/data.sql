@@ -2,9 +2,14 @@
 
 -- First delete existing data 
 
+DELETE FROM workout_exercise;
 DELETE FROM exercise;
+DELETE FROM workout;
+
 
 -- Insert data into now empty tables
+
+-- EXERCISES
 
 INSERT INTO exercise (id, description, muscle, name) 
 VALUES('1598', 'Press barbell straight up', 'Chest', 'Barbell Bench Press');
@@ -35,3 +40,29 @@ VALUES('1606', 'Press dumbbells upwards', 'Shoulders', 'Shoulder Dumbbell Press'
 
 INSERT INTO exercise (id, description, muscle, name)
 VALUES('1607', 'Pull arms towards each-other with straight arms', 'Chest', 'Cable Fly');
+
+-- WORKOUTS
+
+INSERT INTO workout (id, name, user_id)
+VALUES('1600', 'Chest & Back', '101023222758474542773');
+
+INSERT INTO workout_exercise (workout_id, exercise_id)
+VALUES('1600', '1598');
+
+INSERT INTO workout_exercise (workout_id, exercise_id)
+VALUES('1600', '1599');
+
+INSERT INTO workout_exercise (workout_id, exercise_id)
+VALUES('1600', '1604');
+
+INSERT INTO workout (id, name, user_id)
+VALUES('1601', 'Arms', '101023222758474542773');
+
+INSERT INTO workout_exercise (workout_id, exercise_id)
+VALUES('1601', '1600');
+
+INSERT INTO workout_exercise (workout_id, exercise_id)
+VALUES('1601', '1601');
+
+INSERT INTO workout_exercise (workout_id, exercise_id)
+VALUES('1601', '1605');

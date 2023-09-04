@@ -10,6 +10,9 @@ public class Workout {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
     @ManyToMany
     @JoinTable(
             name = "workout_exercise",
@@ -20,10 +23,16 @@ public class Workout {
 
     protected Workout() {}
 
-    public Workout(Long id, String name, List<Exercise> exercises) {
+    public Workout(Long id, String name, List<Exercise> exercises, User user) {
         this.id = id;
         this.name = name;
         this.exercises = exercises;
+        this.user = user;
+    }
+
+    public Workout(String name, User user) {
+        this.name = name;
+        this.user = user;
     }
 
     public String getName() {

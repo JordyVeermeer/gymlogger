@@ -21,7 +21,7 @@ export default function Navbar() {
             <div className='navRight'>
                 <ul>
                     <NavbarItem label="Search" to="/search" />
-                    <NavbarItem label="My Schedule" to="/myschedule" />
+                    <NavbarItem label="My workouts" to="/myworkouts" />
                     <NavbarItem label="Progress" to="/progress" />
                     <AuthenticationButton />
                 </ul>

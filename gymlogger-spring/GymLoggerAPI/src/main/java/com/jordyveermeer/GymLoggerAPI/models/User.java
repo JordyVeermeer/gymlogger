@@ -2,7 +2,10 @@ package com.jordyveermeer.GymLoggerAPI.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -10,6 +13,9 @@ public class User {
     @Id
     private String user_id;
     private String username;
+
+    @OneToMany(mappedBy = "user")
+    private List<Workout> workouts;
 
     protected User() {};
 
@@ -24,4 +30,5 @@ public class User {
 
     public String getUsername() { return this.username; };
     public void setUsername(String username) { this.username = username; };
+    public String getUser_id() { return this.user_id; }
 }

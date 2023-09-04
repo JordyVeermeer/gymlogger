@@ -6,6 +6,8 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Exercise from './components/exercises/Exercise';
 import { ExerciseProvider } from './contexts/ExerciseContext';
 import { Homepage } from './components/Homepage';
+import WorkoutList from './components/workouts/WorkoutList.jsx';
+import { WorkoutProvider } from './contexts/WorkoutContext';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "exercise/:name",
         element: <Exercise />,
+      },
+      {
+        path: "myworkouts",
+        element: <WorkoutList />,
       }
     ]
   },
@@ -32,7 +38,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <ExerciseProvider>
+      <WorkoutProvider>
       <RouterProvider router={router}/>
+      </WorkoutProvider>
     </ExerciseProvider>
   );
 }
