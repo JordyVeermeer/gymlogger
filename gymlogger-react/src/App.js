@@ -8,6 +8,8 @@ import { ExerciseProvider } from './contexts/ExerciseContext';
 import { Homepage } from './components/Homepage';
 import WorkoutList from './components/workouts/WorkoutList.jsx';
 import { WorkoutProvider } from './contexts/WorkoutContext';
+import AppRoot from './components/AppRoot';
+import Dashboard from './components/dashboard/Dashboard';
 
 const router = createBrowserRouter([
   {
@@ -18,9 +20,20 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Homepage />,
+      }
+    ] 
+  },
+  {
+    path: "/",
+    element: <AppRoot />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "dashboard",
+        element: <Dashboard />,
       },
       {
-        path: "search",
+        path: "exercises",
         element: <SearchPage />,
       },
       {
@@ -32,7 +45,7 @@ const router = createBrowserRouter([
         element: <WorkoutList />,
       }
     ]
-  },
+  }
 ]);
 
 function App() {

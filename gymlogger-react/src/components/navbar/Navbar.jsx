@@ -15,16 +15,18 @@ function NavbarItem({label, to, className}) {
 export default function Navbar() {
     return (
         <div className="navbar">
-            <div className='navLeft'>
-                <Link to="/"><h1>GymLogger</h1></Link>
+            <div className='navHeader'>
+                <Link to="/dashboard"><h1>GymLogger</h1></Link>
             </div>
-            <div className='navRight'>
+            <div className='navItems'>
                 <ul>
-                    <NavbarItem label="Search" to="/search" />
+                    <NavbarItem label="Exercises" to="/exercises" />
                     <NavbarItem label="My workouts" to="/myworkouts" />
                     <NavbarItem label="Progress" to="/progress" />
-                    <AuthenticationButton />
                 </ul>
+            </div>
+            <div className="navAuth">
+                <AuthenticationButton />
             </div>
         </div>
     );

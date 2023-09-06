@@ -5,7 +5,6 @@ import './root.css';
 export default function Root() {
     return (
         <div className="layout">
-            <Navbar />
             <Outlet />
         </div>
     );

@@ -3,7 +3,7 @@ import { LogoutButton } from "./LogoutButton";
 import { LoginButton } from "./LoginButton";
 
 export const AuthenticationButton = () => {
-    const { isAuthenticated, user } = useAuth0();
+    const { isAuthenticated } = useAuth0();
 
     if (isAuthenticated) {
         return (
