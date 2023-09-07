@@ -1,6 +1,8 @@
 package com.jordyveermeer.GymLoggerAPI.models;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 import java.util.List;
 
@@ -14,6 +16,7 @@ public class Exercise {
     private String muscle;
     private String description;
     @ManyToMany(mappedBy = "exercises")
+    @Cascade(CascadeType.ALL)
     private List<Workout> workouts;
 
     protected Exercise() {}

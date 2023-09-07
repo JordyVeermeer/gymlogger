@@ -26,6 +26,10 @@ public class UserService {
         }
     }
 
+    public User findUser(String id) {
+        return userRepo.findById(id).get();
+    }
+
     public String jwtIdExtractor(String token) {
         Base64.Decoder decoder = Base64.getUrlDecoder();
         ObjectMapper mapper = new ObjectMapper();

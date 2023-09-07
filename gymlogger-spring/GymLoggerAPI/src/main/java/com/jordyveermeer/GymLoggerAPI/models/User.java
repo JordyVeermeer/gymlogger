@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 import java.util.List;
 
@@ -15,6 +17,7 @@ public class User {
     private String username;
 
     @OneToMany(mappedBy = "user")
+    @Cascade(CascadeType.ALL)
     private List<Workout> workouts;
 
     protected User() {};

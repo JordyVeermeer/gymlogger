@@ -1,6 +1,7 @@
 package com.jordyveermeer.GymLoggerAPI.controllers;
 
 import com.jordyveermeer.GymLoggerAPI.models.Workout;
+import com.jordyveermeer.GymLoggerAPI.models.User;
 import com.jordyveermeer.GymLoggerAPI.services.UserService;
 import com.jordyveermeer.GymLoggerAPI.services.WorkoutService;
 import org.springframework.web.bind.annotation.*;
@@ -28,6 +29,8 @@ public class WorkoutController {
 
     @PostMapping()
     public void createWorkout(@RequestHeader(HttpHeaders.AUTHORIZATION) String authHeader, @RequestBody Workout workout) {
+        String userId = userService.jwtIdExtractor(authHeader);
 
+        workoutService.createNewWorkout(userId, workout);
     }
 }

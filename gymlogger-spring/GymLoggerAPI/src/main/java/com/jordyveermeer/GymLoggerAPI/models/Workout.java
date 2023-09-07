@@ -1,6 +1,8 @@
 package com.jordyveermeer.GymLoggerAPI.models;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 import java.util.List;
 
@@ -50,4 +52,9 @@ public class Workout {
     public void setExercises(List<Exercise> exercises) {
         this.exercises = exercises;
     }
+
+    public void addExercise(Exercise ex) { this.exercises.add(ex); }
+    public User getUser() { return this.user; };
+
+    public void setUser(User u) { this.user = u; };
 }
