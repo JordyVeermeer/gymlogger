@@ -15,23 +15,24 @@ export const ExerciseProvider = ({ children }) => {
         return exercises.find(e => e.name === name);
     }, [exercises]);
 
-    useEffect(() => {
-        const fetchExercises = async () => {
 
-            //const data = await exerciseAPI.getAll();
-            if (isAuthenticated) {
-                const data = await getAll();
-                setExercises(data);
-            }
+    const fetchExercises = useCallback(async () => {
+
+        //const data = await exerciseAPI.getAll();
+        if (isAuthenticated) {
+            const data = await getAll();
+            setExercises(data);
         }
+    }, [getAll, isAuthenticated])
 
+    useEffect(() => {
         fetchExercises();
         console.log("Exercises have been fetched in ExerciseContext!");
         //console.log(`exercises: ${exercises}`);
 
-    }, [getAll, isAuthenticated]);
+    }, [fetchExercises]);
 
-    const value = useMemo(() => ({ exercises, getByName }), [exercises, getByName]);
+    const value = useMemo(() => ({ exercises, getByName, fetchExercises }), [exercises, getByName, fetchExercises]);
 
     return (
         <ExerciseContext.Provider value={value}>

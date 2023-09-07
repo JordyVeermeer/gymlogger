@@ -18,10 +18,22 @@ const useWorkouts = () => {
         return data;
     }, [getAccessTokenSilently]);
 
+    const postWorkout = useCallback(async (workout) => {
+        const token = await getAccessTokenSilently();
+        const res = await axios.post(baseUrl, workout, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        });
+        return res;
+        
+    }, [getAccessTokenSilently]);
+
     const workoutsApi = useMemo(() => ({
         getMyWorkouts,
+        postWorkout,
 
-    }), [getMyWorkouts]);
+    }), [getMyWorkouts, postWorkout]);
 
     return workoutsApi;
 }

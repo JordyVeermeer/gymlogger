@@ -21,7 +21,7 @@ export default function Navbar() {
             <div className='navItems'>
                 <ul>
                     <NavbarItem label="Exercises" to="/exercises" />
-                    <NavbarItem label="My workouts" to="/myworkouts" />
+                    <NavbarItem label="My workouts" to="/workouts" />
                     <NavbarItem label="Progress" to="/progress" />
                 </ul>
             </div>

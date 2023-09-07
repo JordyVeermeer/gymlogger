@@ -10,6 +10,7 @@ import WorkoutList from './components/workouts/WorkoutList.jsx';
 import { WorkoutProvider } from './contexts/WorkoutContext';
 import AppRoot from './components/AppRoot';
 import Dashboard from './components/dashboard/Dashboard';
+import NewWorkout from './components/workouts/NewWorkout';
 
 const router = createBrowserRouter([
   {
@@ -41,9 +42,13 @@ const router = createBrowserRouter([
         element: <Exercise />,
       },
       {
-        path: "myworkouts",
+        path: "workouts",
         element: <WorkoutList />,
-      }
+      },
+      {
+        path: "workouts/new",
+        element: <NewWorkout />,
+      },
     ]
   }
 ]);
