@@ -1,4 +1,5 @@
-import { useContext, useEffect, useState } from "react"
+import { useContext, useState } from "react"
+import { redirect } from "react-router-dom"; 
 import { ExerciseContext } from '../../contexts/ExerciseContext';
 import { WorkoutContext } from "../../contexts/WorkoutContext";
 
@@ -34,6 +35,7 @@ export default function NewWorkout() {
         console.log("Removed exercise");
     };
 
+    // handle workout form
     const handleWorkout = async (event) => {
         event.preventDefault();
         const formData = new FormData(event.target);
@@ -43,6 +45,7 @@ export default function NewWorkout() {
         };
         console.log(JSON.stringify(workout));
         createWorkout(workout);
+        redirect("/workouts");
     };
 
 

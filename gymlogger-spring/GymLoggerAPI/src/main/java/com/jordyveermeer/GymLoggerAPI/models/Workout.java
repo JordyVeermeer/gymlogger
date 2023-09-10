@@ -3,6 +3,7 @@ package com.jordyveermeer.GymLoggerAPI.models;
 import jakarta.persistence.*;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
+import org.hibernate.annotations.OnDelete;
 
 import java.util.List;
 

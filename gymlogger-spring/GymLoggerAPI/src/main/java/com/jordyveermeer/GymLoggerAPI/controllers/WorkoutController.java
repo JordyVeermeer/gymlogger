@@ -33,4 +33,10 @@ public class WorkoutController {
 
         workoutService.createNewWorkout(userId, workout);
     }
+
+    @DeleteMapping("/{workoutName}")
+    public void deleteWorkout(@RequestHeader(HttpHeaders.AUTHORIZATION) String authHeader, @PathVariable String workoutName) {
+        String user_id = userService.jwtIdExtractor(authHeader);
+        workoutService.deleteWorkout(workoutName, user_id);
+    }
 }

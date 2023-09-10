@@ -23,12 +23,18 @@ public class WorkoutService {
     }
 
     public List<Workout> getAllWorkoutsOfUser(String user_id) {
-        //return workoutRepo.findById(Long.valueOf(1600)).get();
-        return workoutRepo.findWorkoutsByUser(new User(user_id));
+        User u = userService.findUser(user_id);
+        return workoutRepo.findWorkoutsByUser(u);
+    }
+
+    public void deleteWorkout(String workoutName, String user_id) {
+        Workout w = workoutRepo.findByName(workoutName, user_id);
+        workoutRepo.delete(w);
     }
 
     public void createNewWorkout(String userId, Workout workout) {
         // NOTE: this is a temporary workaround
+        // dont read further thanks
         User u = userService.findUser(userId);
         workout.setUser(u);
         List<Exercise> list = workout.getExercises();

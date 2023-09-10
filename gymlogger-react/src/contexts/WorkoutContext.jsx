@@ -9,7 +9,7 @@ export const WorkoutProvider = ({ children }) => {
 
     const [workouts, setWorkouts] = useState();
     const { isAuthenticated } = useAuth0();
-    const { getMyWorkouts, postWorkout } = useWorkouts();
+    const { getMyWorkouts, postWorkout, deleteWorkout } = useWorkouts();
 
     const fetchWorkouts = useCallback(async () => {
         if (isAuthenticated) {
@@ -28,14 +28,24 @@ export const WorkoutProvider = ({ children }) => {
         }
     }, [isAuthenticated, fetchWorkouts, postWorkout]);
 
+    const removeWorkout = useCallback(async (workoutName) => {
+        if (isAuthenticated) {
+            const res = await deleteWorkout(workoutName);
+            if (res.status === 200) {
+                fetchWorkouts();
+                console.log('fetched new workouts!');
+            }
+        }
+    }, [isAuthenticated, deleteWorkout, fetchWorkouts]);
+
     useEffect(() => {
         fetchWorkouts();
 
     }, [fetchWorkouts]);
 
     const value = useMemo(() => ({
-             workouts, createWorkout
-    }), [workouts, createWorkout]);
+             workouts, createWorkout, removeWorkout
+    }), [workouts, createWorkout, removeWorkout]);
 
     return (
         <WorkoutContext.Provider value={value}>

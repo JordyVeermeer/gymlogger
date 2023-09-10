@@ -16,7 +16,6 @@ public class Exercise {
     private String muscle;
     private String description;
     @ManyToMany(mappedBy = "exercises")
-    @Cascade(CascadeType.ALL)
     private List<Workout> workouts;
 
     protected Exercise() {}

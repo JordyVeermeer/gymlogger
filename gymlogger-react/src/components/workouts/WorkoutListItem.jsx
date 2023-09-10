@@ -1,5 +1,8 @@
+import { useContext } from "react"
+import { WorkoutContext } from "../../contexts/WorkoutContext"
 
 export default function WorkoutListItem({workout}) {
+    const { removeWorkout } = useContext(WorkoutContext);
 
     return (
         <div className="workoutListItem">
@@ -7,9 +10,10 @@ export default function WorkoutListItem({workout}) {
             {
                 workout.exercises && 
                 workout.exercises.map(e => (
-                    <p> - {e.name}</p>
+                        <p> - {e.name}</p>
                 ))
             }
+            <button type="button" onClick={() => removeWorkout(workout.name)}>delete</button>
         </div>
     )
 };
