@@ -1,0 +1,14 @@
+
+.newWorkout {
+    background-color: #181D27;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.workout-form {
+    border: solid 1px white;
+    border-radius: 15px;
+    padding: 2rem;
+}

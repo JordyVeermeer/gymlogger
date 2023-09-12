@@ -59,6 +59,7 @@ const useWorkouts = () => {
                 console.log('Error', err.message);
             }
         });
+        console.log(`Deleted ${workoutName}`);
         return res;
     }, [getAccessTokenSilently]);
 

@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { WorkoutContext } from "../../contexts/WorkoutContext"
+import { DeleteButton } from "../buttons/DeleteButton";
 
 export default function WorkoutListItem({workout}) {
     const { removeWorkout } = useContext(WorkoutContext);
@@ -13,7 +14,8 @@ export default function WorkoutListItem({workout}) {
                         <p> - {e.name}</p>
                 ))
             }
-            <button type="button" onClick={() => removeWorkout(workout.name)}>delete</button>
+            {/* <button type="button" onClick={() => removeWorkout(workout.name)}>delete</button> */}
+            <DeleteButton onclick={() => removeWorkout(workout.name)} />
         </div>
     )
 };

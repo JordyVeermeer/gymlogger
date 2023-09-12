@@ -2,7 +2,6 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { createContext, useEffect, useMemo, useState, useCallback } from "react";
 import useWorkouts from "../api/workouts";
 
-
 export const WorkoutContext = createContext([]);
 
 export const WorkoutProvider = ({ children }) => {

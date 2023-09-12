@@ -2,51 +2,12 @@ import { useContext, useState } from "react"
 import { redirect } from "react-router-dom"; 
 import { ExerciseContext } from '../../contexts/ExerciseContext';
 import { WorkoutContext } from "../../contexts/WorkoutContext";
+import { WorkoutForm } from "./WorkoutForm";
+import './new_workout.css'
 
 export default function NewWorkout() {
 
     //const [ name, setName ] = useState("");
-    const [ selectedExerciseId, setSelectedExerciseId ] = useState(0); // Holds selected exercise as an index for exercises array
-    const [ addedExercises, setAddedExercises ] = useState([]);
-
-    const { exercises } = useContext(ExerciseContext);
-    const { createWorkout } = useContext(WorkoutContext);
-
-    
-    // Add selected exercise to list
-    const addExercise = () => {
-        const ex = exercises[selectedExerciseId];
-        // check if exercise already in list
-        const checkIfExists = (e => e.name === ex.name)
-        if (!addedExercises.some(checkIfExists)) {
-            console.log(`Adding ${ex.name} to the list!`);
-            setAddedExercises([...addedExercises, ex]);
-        } else {
-            console.log(`${ex.name} zit al in de lijst`);
-        }
-    };
-
-    // Remove selected exercise from list
-    const removeExercise = (exName) => {
-        const newExercises = addedExercises.filter(e => e.name !== exName);
-
-        setAddedExercises(newExercises);
-
-        console.log("Removed exercise");
-    };
-
-    // handle workout form
-    const handleWorkout = async (event) => {
-        event.preventDefault();
-        const formData = new FormData(event.target);
-        const workout = {
-            name: formData.get("workoutName"),
-            exercises: addedExercises
-        };
-        console.log(JSON.stringify(workout));
-        createWorkout(workout);
-        redirect("/workouts");
-    };
 
 
     /* TODO: HTML NOG OPSPLITSEN IN KLEINERE COMPONENTEN */
@@ -54,8 +15,9 @@ export default function NewWorkout() {
     return (
         <div className="newWorkout">
             <h2>create a new workout</h2>
+            <WorkoutForm />
 
-            <form onSubmit={handleWorkout}>
+            {/* <form onSubmit={handleWorkout}>
                 <div>
                     <label>
                         Name:
@@ -93,7 +55,7 @@ export default function NewWorkout() {
                 <div>
                     <button type="submit">Add workout</button>
                 </div>
-            </form>
+            </form> */}
 
         </div>
     )

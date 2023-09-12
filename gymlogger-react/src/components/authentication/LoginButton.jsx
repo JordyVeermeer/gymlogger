@@ -1,9 +1,12 @@
 import { useAuth0 } from "@auth0/auth0-react";
+import { Button } from "@mui/material";
 
 export const LoginButton = () => {
     const { loginWithRedirect } = useAuth0();
 
     return (
-        <button className="logInButton" onClick={() => loginWithRedirect()} >Log In</button>
+        <Button variant="contained" onClick={() => loginWithRedirect({ appState: { returnTo: "/dashboard" }})} >
+            Log In
+        </Button>
     );
 }

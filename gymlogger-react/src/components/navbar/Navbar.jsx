@@ -22,6 +22,7 @@ export default function Navbar() {
                 <ul>
                     <NavbarItem label="Exercises" to="/exercises" />
                     <NavbarItem label="My workouts" to="/workouts" />
+                    <NavbarItem label="My schedule" to="/progress" />
                     <NavbarItem label="Progress" to="/progress" />
                 </ul>
             </div>
