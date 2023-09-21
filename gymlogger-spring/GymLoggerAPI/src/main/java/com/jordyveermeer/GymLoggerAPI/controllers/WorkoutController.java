@@ -1,7 +1,6 @@
 package com.jordyveermeer.GymLoggerAPI.controllers;
 
 import com.jordyveermeer.GymLoggerAPI.models.Workout;
-import com.jordyveermeer.GymLoggerAPI.models.User;
 import com.jordyveermeer.GymLoggerAPI.services.UserService;
 import com.jordyveermeer.GymLoggerAPI.services.WorkoutService;
 import org.springframework.web.bind.annotation.*;

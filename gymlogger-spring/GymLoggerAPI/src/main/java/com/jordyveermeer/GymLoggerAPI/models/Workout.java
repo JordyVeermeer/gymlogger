@@ -1,9 +1,6 @@
 package com.jordyveermeer.GymLoggerAPI.models;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CascadeType;
-import org.hibernate.annotations.OnDelete;
 
 import java.util.List;
 
@@ -23,6 +20,9 @@ public class Workout {
             inverseJoinColumns = @JoinColumn(name = "exercise_id")
     )
     private List<Exercise> exercises;
+
+    @ManyToMany(mappedBy = "workouts")
+    private List<Schedule> schedules;
 
     protected Workout() {}
 
