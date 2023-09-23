@@ -8,7 +8,7 @@ import java.util.List;
 public class Workout {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long workoutId;
     private String name;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id", nullable = false)
@@ -21,13 +21,13 @@ public class Workout {
     )
     private List<Exercise> exercises;
 
-    @ManyToMany(mappedBy = "workouts")
-    private List<Schedule> schedules;
+    //@ManyToMany(mappedBy = "workouts")
+    //private List<Schedule> schedules;
 
     protected Workout() {}
 
     public Workout(Long id, String name, List<Exercise> exercises, User user) {
-        this.id = id;
+        this.workoutId = id;
         this.name = name;
         this.exercises = exercises;
         this.user = user;

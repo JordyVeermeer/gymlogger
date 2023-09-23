@@ -2,6 +2,7 @@ package com.jordyveermeer.GymLoggerAPI.models;
 
 import jakarta.persistence.*;
 
+import java.util.List;
 import java.util.Map;
 
 @Entity
@@ -15,7 +16,7 @@ public class Schedule {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @ManyToMany()
+    /*@ManyToMany()
     @JoinTable(
             name = "weekday_workout",
             joinColumns = @JoinColumn(name = "schedule_id"),
@@ -23,26 +24,25 @@ public class Schedule {
     )
     @MapKeyEnumerated(EnumType.STRING)
     @MapKeyColumn(name = "weekday")
-    private Map<Weekday, Workout> workouts;
+    private Map<Weekday, Workout> workouts;*/
+
+    @OneToMany(mappedBy = "schedule")
+    private List<WorkoutSchedule> workouts;
 
     protected Schedule() {};
 
-    public Schedule(Long id, User user, Map<Weekday, Workout> workouts) {
+    public Schedule(Long id, User user, List<WorkoutSchedule> workouts) {
         this.scheduleId = id;
         this.user = user;
         this.workouts = workouts;
     };
 
     public void addWorkout(Workout workout, Weekday weekday) {
-        if (!workouts.containsKey(weekday)) {
-            workouts.put(weekday, workout);
-        };
+        // TO DO
     }
 
     public void removeWorkoutOnDay(Weekday weekday) {
-        if (workouts.containsKey(weekday)) {
-            workouts.remove(weekday);
-        }
+        // TO DO
     }
 
     // Getters & Setters
@@ -54,11 +54,11 @@ public class Schedule {
         this.user = user;
     }
 
-    public Map<Weekday, Workout> getWorkouts() {
+    public List<WorkoutSchedule> getWorkouts() {
         return workouts;
     }
 
-    private void setWorkouts(Map<Weekday, Workout> workouts) {
+    private void setWorkouts(List<WorkoutSchedule> workouts) {
         this.workouts = workouts;
     }
 }

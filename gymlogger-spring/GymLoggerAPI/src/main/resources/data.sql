@@ -2,15 +2,22 @@
 
 -- First delete existing data 
 
-DELETE FROM weekday_workout;
 DELETE FROM workout_exercise;
-DELETE FROM exercise;
+DELETE FROM workout_schedule;
 DELETE FROM workout;
+DELETE FROM exercise;
 DELETE FROM schedule;
+DELETE FROM users;
+
 
 
 
 -- Insert data into now empty tables
+
+-- USERS
+
+INSERT INTO users (user_id)
+VALUES ('101023222758474542773');
 
 -- EXERCISES
 
@@ -46,7 +53,7 @@ VALUES('1607', 'Pull arms towards each-other with straight arms', 'Chest', 'Cabl
 
 -- WORKOUTS
 
-INSERT INTO workout (id, name, user_id)
+INSERT INTO workout (workout_id, name, user_id)
 VALUES('1600', 'Chest & Back', '101023222758474542773');
 
 INSERT INTO workout_exercise (workout_id, exercise_id)
@@ -58,7 +65,7 @@ VALUES('1600', '1599');
 INSERT INTO workout_exercise (workout_id, exercise_id)
 VALUES('1600', '1604');
 
-INSERT INTO workout (id, name, user_id)
+INSERT INTO workout (workout_id, name, user_id)
 VALUES('1601', 'Arms', '101023222758474542773');
 
 INSERT INTO workout_exercise (workout_id, exercise_id)
@@ -75,5 +82,5 @@ VALUES('1601', '1605');
 INSERT INTO schedule (schedule_id, user_id)
 VALUES('1600', '101023222758474542773');
 
-INSERT INTO weekday_workout (schedule_id, workout_id, weekday)
-VALUES('1600', '1601', 'MONDAY')
+INSERT INTO workout_schedule (workout_schedule_id, weekday, schedule_id, workout_id)
+VALUES('991', 'MONDAY', '1600', '1600')
