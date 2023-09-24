@@ -1,5 +1,6 @@
 package com.jordyveermeer.GymLoggerAPI.controllers;
 
+import com.jordyveermeer.GymLoggerAPI.exceptions.ResourceNotFoundException;
 import com.jordyveermeer.GymLoggerAPI.models.Schedule;
 import com.jordyveermeer.GymLoggerAPI.models.User;
 import com.jordyveermeer.GymLoggerAPI.services.ScheduleService;
@@ -24,10 +25,13 @@ public class ScheduleController {
 
     @GetMapping
     public Schedule schedule(@RequestHeader(HttpHeaders.AUTHORIZATION) String authHeader) {
-        String user_id = userService.jwtIdExtractor(authHeader);
-        //Schedule s = scheduleService.getSchedule(user_id);
+        String userId = userService.jwtIdExtractor(authHeader);
+        Schedule s = scheduleService.getSchedule(userId);
+        if (s == null) {
+            throw new ResourceNotFoundException("No schedules found.");
+        }
 
-        return null;
+        return s;
     };
 
 }

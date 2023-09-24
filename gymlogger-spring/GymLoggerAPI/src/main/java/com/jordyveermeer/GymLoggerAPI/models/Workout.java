@@ -2,6 +2,7 @@ package com.jordyveermeer.GymLoggerAPI.models;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -21,8 +22,8 @@ public class Workout {
     )
     private List<Exercise> exercises;
 
-    //@ManyToMany(mappedBy = "workouts")
-    //private List<Schedule> schedules;
+    @OneToMany(mappedBy = "workout")
+    private List<WorkoutSchedule> schedules;
 
     protected Workout() {}
 

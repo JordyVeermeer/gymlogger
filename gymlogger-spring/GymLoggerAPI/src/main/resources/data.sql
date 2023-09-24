@@ -83,4 +83,7 @@ INSERT INTO schedule (schedule_id, user_id)
 VALUES('1600', '101023222758474542773');
 
 INSERT INTO workout_schedule (workout_schedule_id, weekday, schedule_id, workout_id)
-VALUES('991', 'MONDAY', '1600', '1600')
+VALUES('991', 'MONDAY', '1600', '1600');
+
+INSERT INTO workout_schedule (workout_schedule_id, weekday, schedule_id, workout_id)
+VALUES('992', 'TUESDAY', '1600', '1601');

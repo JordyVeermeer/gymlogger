@@ -3,7 +3,6 @@ package com.jordyveermeer.GymLoggerAPI.services;
 import com.jordyveermeer.GymLoggerAPI.models.Exercise;
 import com.jordyveermeer.GymLoggerAPI.models.User;
 import com.jordyveermeer.GymLoggerAPI.models.Workout;
-import com.jordyveermeer.GymLoggerAPI.repositories.UserRepository;
 import com.jordyveermeer.GymLoggerAPI.repositories.WorkoutRepository;
 import org.springframework.stereotype.Service;
 
@@ -35,6 +34,7 @@ public class WorkoutService {
     public void createNewWorkout(String userId, Workout workout) {
         // NOTE: this is a temporary workaround
         // dont read further thanks
+        // TO-DO: FIX
         User u = userService.findUser(userId);
         workout.setUser(u);
         List<Exercise> list = workout.getExercises();

@@ -1,9 +1,6 @@
 package com.jordyveermeer.GymLoggerAPI.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 
@@ -19,6 +16,9 @@ public class User {
     @OneToMany(mappedBy = "user")
     @Cascade(CascadeType.ALL)
     private List<Workout> workouts;
+
+    @OneToMany(mappedBy = "user")
+    private List<Schedule> schedules;
 
     protected User() {};
 

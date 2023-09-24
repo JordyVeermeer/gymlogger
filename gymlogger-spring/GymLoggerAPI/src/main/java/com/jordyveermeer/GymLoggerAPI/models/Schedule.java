@@ -1,9 +1,9 @@
 package com.jordyveermeer.GymLoggerAPI.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.List;
-import java.util.Map;
 
 @Entity
 public class Schedule {
@@ -12,21 +12,12 @@ public class Schedule {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long scheduleId;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    /*@ManyToMany()
-    @JoinTable(
-            name = "weekday_workout",
-            joinColumns = @JoinColumn(name = "schedule_id"),
-            inverseJoinColumns = @JoinColumn(name = "workout_id")
-    )
-    @MapKeyEnumerated(EnumType.STRING)
-    @MapKeyColumn(name = "weekday")
-    private Map<Weekday, Workout> workouts;*/
-
     @OneToMany(mappedBy = "schedule")
+    @JsonManagedReference
     private List<WorkoutSchedule> workouts;
 
     protected Schedule() {};
@@ -37,12 +28,13 @@ public class Schedule {
         this.workouts = workouts;
     };
 
-    public void addWorkout(Workout workout, Weekday weekday) {
-        // TO DO
+    public void addWorkout(Workout workout, String weekday) {
+        //WorkoutSchedule ws = new WorkoutSchedule(this, workout, weekday);
+        //workouts.add(ws);
     }
 
-    public void removeWorkoutOnDay(Weekday weekday) {
-        // TO DO
+    public void removeWorkoutOnDay(String weekday) {
+        // TO-DO
     }
 
     // Getters & Setters
