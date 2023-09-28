@@ -7,6 +7,8 @@ const baseUrl = `${process.env.REACT_APP_API_URL}/workouts`;
 const useWorkouts = () => {
     const { getAccessTokenSilently } = useAuth0();
 
+
+    // GET workouts
     const getMyWorkouts = useCallback(async () => {
         const token = await getAccessTokenSilently();
         const { data } = await axios.get(baseUrl, {
@@ -26,6 +28,7 @@ const useWorkouts = () => {
         return data;
     }, [getAccessTokenSilently]);
 
+    // POST workout
     const postWorkout = useCallback(async (workout) => {
         const token = await getAccessTokenSilently();
         const res = await axios.post(baseUrl, workout, {
@@ -44,6 +47,7 @@ const useWorkouts = () => {
         return res;
     }, [getAccessTokenSilently]);
 
+    // DELETE workout
     const deleteWorkout = useCallback(async (workoutName) => {
         const token = await getAccessTokenSilently();
         const res = await axios.delete(`${baseUrl}/${workoutName}`, {

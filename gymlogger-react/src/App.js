@@ -9,11 +9,11 @@ import WorkoutList from './components/workouts/WorkoutList.jsx';
 import { WorkoutProvider } from './contexts/WorkoutContext';
 import AppRoot from './components/AppRoot';
 import { Dashboard } from './components/dashboard/Dashboard';
-import NewWorkout from './components/workouts/NewWorkout';
 import { LoginCallback } from './components/authentication/LoginCallback';
 import { Auth0Provider } from '@auth0/auth0-react';
 import { AuthenticationGuard } from './components/authentication/AuthenticationGuard';
 import { WorkoutForm } from './components/workouts/WorkoutForm';
+import ScheduleOverview from './components/schedules/ScheduleOverview';
 
 function App() {
   return (
@@ -42,6 +42,8 @@ function App() {
                 <Route path='/exercise/:name' element={<AuthenticationGuard component={Exercise} />} />
                 <Route path='/workouts' element={<AuthenticationGuard component={WorkoutList} />} />
                 <Route path='/workouts/new' element={<AuthenticationGuard component={WorkoutForm} />} />
+                <Route path='/schedules' element={<AuthenticationGuard component={ScheduleOverview} />} />
+
               </Route>
 
               <Route path='*' element={<ErrorPage />} />
