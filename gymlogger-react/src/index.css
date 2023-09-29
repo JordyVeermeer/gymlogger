@@ -21,4 +21,5 @@ code {
 html, body, #root, #root>div {
   height: 100%;
   /* font-family: 'Quicksand', sans-serif; */
+  background-color: #161717;
 }

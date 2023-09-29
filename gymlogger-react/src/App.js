@@ -1,5 +1,4 @@
 import ErrorPage from './components/ErrorPage';
-import SearchPage from './components/searchpage/Searchpage';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Exercise from './components/exercises/Exercise';
@@ -14,6 +13,7 @@ import { Auth0Provider } from '@auth0/auth0-react';
 import { AuthenticationGuard } from './components/authentication/AuthenticationGuard';
 import { WorkoutForm } from './components/workouts/WorkoutForm';
 import ScheduleOverview from './components/schedules/ScheduleOverview';
+import ExercisesOverview from './components/exercises/ExercisesOverview';
 
 function App() {
   return (
@@ -38,7 +38,7 @@ function App() {
               <Route path='/' element={<AppRoot />} >
                 <Route path='/login/callback' element={<LoginCallback />} />
                 <Route path='/dashboard' element={<AuthenticationGuard component={Dashboard} />} />
-                <Route path='/exercises' element={<AuthenticationGuard component={SearchPage} />} />
+                <Route path='/exercises' element={<AuthenticationGuard component={ExercisesOverview} />} />
                 <Route path='/exercise/:name' element={<AuthenticationGuard component={Exercise} />} />
                 <Route path='/workouts' element={<AuthenticationGuard component={WorkoutList} />} />
                 <Route path='/workouts/new' element={<AuthenticationGuard component={WorkoutForm} />} />

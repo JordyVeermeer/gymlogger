@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
 
 .navbar {
-    background-color: #181D27;
-    color: #92AA83;
+    background-color: #161717;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -11,36 +10,46 @@
     height: 100%;
     position: sticky;
     top: 0;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 .navbar-mobile {
     display: none;
+    height: 100%;
+}
+
+.hamburger {
+    height: 100%;
 }
 
 .hamburger-icons {
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2vh;
-}
-
-ul {
-    margin: 0;
+    /* padding: 2vh; */
+    padding-right: 2vh;
+    padding-left: 2vh;
+    color: #b3ba45;
 }
 
 .nav-items-hamburger {
     position: fixed;
-    top:50px;
+    top:10vh;
     left:0;
-    z-index: 99;
-    background-color: black;
-    height: 100%;
+    z-index: 99999999;
+    height: 90vh;
     width: 100%;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: space-evenly;
+    background-color: #161717;
 }
+
+.nav-item-hamburger {
+    background-color: red;
+}
+
 
 .navHeader {
     display: flex;
@@ -71,15 +80,13 @@ ul {
     justify-content: space-evenly;
     align-items: center;
     padding-left: 0;
-}
-
-.navbarItem {
-    display: inline;
+    list-style-type: none;
+    margin:0;
 }
 
 a {
     text-decoration: none;
-    color:#92AA83;
+    color:#c7c3bd;
 }
 
 a:hover {
@@ -90,20 +97,27 @@ a:hover {
     padding: 10px;
     border: 1px solid #92AA83;
     border-radius: 15%;
-    background-color: #92AA83;
+    background-color: #b3ba45;
     color: black;
 }
 
 @media (max-width: 768px) {
+
+    /* Hide desktop navbar */
     .navbar-desktop {
         display: none;
     }
 
+    /* Show mobile nav */
     .navbar-mobile {
         display: block;
     }
 
     h1 {
         font-size: 6vw;
+    }
+
+    .navbar {
+        border-right: none;
     }
 }

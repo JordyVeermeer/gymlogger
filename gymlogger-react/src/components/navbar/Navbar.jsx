@@ -2,12 +2,12 @@ import { Link } from 'react-router-dom';
 import './navbar.css';
 import { AuthenticationButton } from '../authentication/AuthenticationButton';
 import { Menu, ArrowBackIosNew } from '@mui/icons-material';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
-function NavbarItem({label, to, className}) {
+function NavbarItem({label, to, className, onClick}) {
     return (
-        <li className='navbarItem'  >
-            <Link className={className} to={to}>
+        <li onClick={onClick} className={className}  >
+            <Link to={to}>
                 {label}
             </Link>
         </li>
@@ -20,6 +20,7 @@ function Hamburger({navItems}) {
 
     const toggleMenu = () => {
         setHamburgerIsOpen(!hamburgerIsOpen);
+        console.log(`Menu ${hamburgerIsOpen ? "closed" : "opened"}`);
     };
 
     return (
@@ -34,7 +35,7 @@ function Hamburger({navItems}) {
                     <ul>
                         {
                             navItems.map((item) => (
-                                <NavbarItem key={`${item}-key`} label={item[0]} to={item[1]} />
+                                <NavbarItem onClick={toggleMenu} className={"nav-item-hamburger"} key={`${item}-key`} label={item[0]} to={item[1]} />
                             ))
                         }
                     </ul>
