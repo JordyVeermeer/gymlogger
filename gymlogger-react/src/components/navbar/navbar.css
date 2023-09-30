@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
 
+/* @keyframes hamburger-slide {
+    from {
+
+    }
+
+    to {
+
+    }
+} */
+
 .navbar {
     background-color: #161717;
     display: flex;
@@ -44,10 +54,6 @@
     /* flex-direction: column; */
     justify-content: space-evenly;
     background-color: #161717;
-}
-
-.nav-item-hamburger {
-    background-color: red;
 }
 
 

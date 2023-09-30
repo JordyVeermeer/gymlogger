@@ -1,20 +1,30 @@
 import './exercise.css';
-import img from '../../assets/benchpress.jpg';
+import img from '../../assets/Barbell_bench_press.png';
 import { Link } from 'react-router-dom';
+import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 
 export default function ExerciseShort({ exercise }) {
 
     const encodedName = encodeURI(exercise.name);
 
     return (
-        <Link to={`/exercise/${encodedName}`} className="exercise-short">
-            <div className='card-header'>
-                <img src={img} alt='Bench press' className='image' />
-            </div>
-            <div className='card-content'>
-                <h1>{exercise.name}</h1>
-                <p>Primary muscle: {exercise.muscle}</p>
-            </div>
-        </Link>
+        <div className='exercise-short' >
+            <Link to={`/exercise/${encodedName}`}>
+                <div className="exercise-short-card">
+                    <div className="exercise-short-photo">
+                        <img src={img} alt='exercise' />
+                    </div>
+                    <div className="exercise-short-content">
+                        <p>
+                            {exercise.name}<br />
+                            <small>Primary muscle: {exercise.muscle}</small>
+                        </p>
+                    </div>
+                    <div className="exercise-card-action-btn">
+                        <ArrowCircleRightIcon sx={{ color: '#b3ba45' }} />
+                    </div>
+                </div>
+            </Link>
+        </div>
     );
 }

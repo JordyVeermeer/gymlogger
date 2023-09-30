@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import * as exerciseAPI from "../../api/exercises";
 import ExerciseList from "../exercises/ExerciseList";
 import './searchpage.css';
 
