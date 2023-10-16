@@ -1,5 +1,4 @@
 import { createContext, useCallback, useEffect, useMemo, useState } from "react"
-//import useExercises, * as exerciseAPI from "../api/exercises";
 import useExercises from "../api/exercises";
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -7,7 +6,7 @@ export const ExerciseContext = createContext([]);
 
 export const ExerciseProvider = ({ children }) => {
 
-    const [exercises, setExercises] = useState();
+    const [exercises, setExercises] = useState([]);
     const { isAuthenticated } = useAuth0();
     const { getAll } = useExercises();
 
@@ -15,6 +14,9 @@ export const ExerciseProvider = ({ children }) => {
         return exercises.find(e => e.name === name);
     }, [exercises]);
 
+    const filterBy = useCallback((filter) => {
+        return exercises.filter(e => e.name.toLowerCase().includes(filter.toLowerCase()));
+    }, [exercises])
 
     const fetchExercises = useCallback(async () => {
 
@@ -28,11 +30,11 @@ export const ExerciseProvider = ({ children }) => {
     useEffect(() => {
         fetchExercises();
         console.log("Exercises have been fetched in ExerciseContext!");
-        //console.log(`exercises: ${exercises}`);
-
     }, [fetchExercises]);
 
-    const value = useMemo(() => ({ exercises, getByName, fetchExercises }), [exercises, getByName, fetchExercises]);
+    const value = useMemo(() => ({ 
+        exercises, getByName, fetchExercises, filterBy 
+    }), [exercises, getByName, fetchExercises, filterBy]);
 
     return (
         <ExerciseContext.Provider value={value}>

@@ -20,6 +20,8 @@ public class Schedule {
     @JsonManagedReference
     private List<WorkoutSchedule> workouts;
 
+    //private boolean isActive;
+
     protected Schedule() {};
 
     public Schedule(Long id, User user, List<WorkoutSchedule> workouts) {

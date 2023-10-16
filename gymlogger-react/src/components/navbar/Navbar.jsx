@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './navbar.css';
 import { AuthenticationButton } from '../authentication/AuthenticationButton';
 import { Menu, ArrowBackIosNew } from '@mui/icons-material';
@@ -18,15 +18,23 @@ function Hamburger({navItems}) {
 
     const [hamburgerIsOpen, setHamburgerIsOpen] = useState(false);
 
+    const navigate = useNavigate();
+
     const toggleMenu = () => {
         setHamburgerIsOpen(!hamburgerIsOpen);
         console.log(`Menu ${hamburgerIsOpen ? "closed" : "opened"}`);
     };
 
+    const goBack = () => {
+        navigate(-1);
+        //toggleMenu();
+    }
+
+
     return (
         <div className="hamburger">
             <div className="hamburger-icons">
-                <ArrowBackIosNew />
+                <ArrowBackIosNew onClick={goBack} />
                 <Menu onClick={toggleMenu} />
             </div>
             {

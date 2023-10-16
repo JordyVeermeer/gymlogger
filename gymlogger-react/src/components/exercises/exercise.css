@@ -1,28 +1,4 @@
-.card-header {
-    overflow: hidden;
-    height: 15vh;
-}
-
-.card-content {
-    padding-left: 1vw;
-    padding-right: 1vw;
-}
-
-.card-content > h1 {
-    font-size: 0.9vw;
-}
-
-.card-content > p {
-    font-size: 0.7vw;
-}
-
-.image {
-    width: 100%;
-    border-radius: 25px 25px 0px 0px;
-    /* margin: auto; */
-}
-
-/* CLEANER CLASSES BELOW */
+/* Css file for Exercise, ExerciseShort and ExerciseOverview */
 
 /* Exercises Overview */
 
@@ -42,6 +18,18 @@
     display: flex;
     justify-content: space-between;
     width: 75%;
+}
+
+.exercises-overview-util > input[type=text] {
+    background-color: #232728;
+    background-image: url('/src/assets/search.png');
+    background-repeat: no-repeat;
+    background-position: 5%;
+    background-size: 10%;
+    border: 0px solid black;
+    border-radius: 7px;
+    padding-left: 12%;
+    color: gray;
 }
 
 .add-exercise-btn {
@@ -67,7 +55,7 @@
     border-radius: 0.7rem;
     box-sizing: border-box;
     width: 100%;
-    height: 15vh;
+    height: 13vh;
     background-color: #232728;
 }
 
@@ -105,6 +93,65 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* Exercise Detailed */
+
+.exercise-detail {
+    display: flex;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+.exercise-card {
+    width: 80%;
+    height: fit-content;
+    background-color: #232728;
+    border-radius: 0.7rem;
+    padding: 3.5vw;
+}
+
+.exercise-card > h1 {
+    text-decoration: underline;
+    font-size: 1rem;
+}
+
+.img-record {
+    display: flex;
+    justify-content: space-between;
+}
+
+.img-record > img {
+    width: 50%;
+    height: auto;
+}
+
+.record {
+    background-color: #4a4c1c;
+    height: fit-content;
+    border-radius: 0.7rem;
+    width: 40%;
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 0.3rem;
+}
+
+.record > h5 {
+    margin: 0;
+    font-weight: 500;
+}
+
+.record > div {
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    column-gap: 0.3rem;
+}
+
+.recordIcon {
+    font-size: 0.5rem;
 }
 
 @media (min-width: 768px) {
