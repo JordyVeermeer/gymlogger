@@ -1,21 +1,23 @@
 import { useContext } from "react"
 import { WorkoutContext } from "../../contexts/WorkoutContext"
-import { DeleteButton } from "../buttons/DeleteButton";
+import { CustomButton } from "../buttons/CustomButton";
 
-export default function WorkoutListItem({workout}) {
+export function WorkoutListItem({workout}) {
     const { removeWorkout } = useContext(WorkoutContext);
 
     return (
-        <div className="workoutListItem">
+        <div className="workout-list-item">
             <h2>{workout.name}</h2>
             {
                 workout.exercises && 
-                workout.exercises.map(e => (
+                workout.exercises.slice(0,3).map(e => (
                         <p> - {e.name}</p>
                 ))
             }
-            {/* <button type="button" onClick={() => removeWorkout(workout.name)}>delete</button> */}
-            <DeleteButton onclick={() => removeWorkout(workout.name)} />
+            <div className="workout-list-item-buttons">
+                <CustomButton label={"edit"}  />
+                <CustomButton label={"delete"} onclick={() => removeWorkout(workout.name)} />
+            </div>
         </div>
     )
 };

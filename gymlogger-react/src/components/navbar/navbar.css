@@ -43,6 +43,11 @@
     color: #b3ba45;
 }
 
+.hamburger-icons > img {
+    width: 40vw;
+    height: auto;
+}
+
 .nav-items-hamburger {
     position: fixed;
     top:10vh;
@@ -55,7 +60,6 @@
     justify-content: space-evenly;
     background-color: #161717;
 }
-
 
 .navHeader {
     display: flex;

@@ -1,0 +1,27 @@
+
+
+/* Progress exercise short */
+
+.progress-exercise-short {
+    background-color: #232728;
+    border-radius: 1.2rem;
+    height: 30vw;
+    width: 30vw;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.progress-exercise-short-weight {
+    display: flex;
+    justify-content: center;
+}
+
+.accentuated-weight {
+    color: #6F762D;
+    font-weight: 800;
+    font-size: 2rem;
+}

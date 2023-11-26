@@ -1,5 +1,28 @@
-.workoutList {
-    background-color: #181D27;
+.workout-list {
     color: white;
     padding-left: 10vw;
+    padding-right: 10vw;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.workout-list > h1 {
+    text-align: center;
+}
+
+.workout-list-item {
+    background-color: #232728;
+    border-radius: 1.2rem;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+.workout-list-item > h2 {
+    font-size: 1.3rem;
+}
+
+.workout-list-item-buttons {
+    display: flex;
+    justify-content: space-between;
 }

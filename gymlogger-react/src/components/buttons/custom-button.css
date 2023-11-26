@@ -2,7 +2,7 @@
     color: white;
     border: solid transparent 1px;
     border-radius: 10px;
-    padding: 0.8rem;
-    background: rgb(155,62,194);
-    background: linear-gradient(90deg, rgba(155,62,194,1) 0%, rgba(65,132,223,1) 100%);
+    padding: 0.7rem;
+    background: #B2BA45;
+    color: black;
 }

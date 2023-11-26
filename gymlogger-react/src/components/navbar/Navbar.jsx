@@ -3,6 +3,7 @@ import './navbar.css';
 import { AuthenticationButton } from '../authentication/AuthenticationButton';
 import { Menu, ArrowBackIosNew } from '@mui/icons-material';
 import { useState } from 'react';
+import logo from '../../assets/gymlogger_logo.png';
 
 function NavbarItem({label, to, className, onClick}) {
     return (
@@ -35,6 +36,7 @@ function Hamburger({navItems}) {
         <div className="hamburger">
             <div className="hamburger-icons">
                 <ArrowBackIosNew onClick={goBack} />
+                <img src={logo} alt='logo-gymlogger' />
                 <Menu onClick={toggleMenu} />
             </div>
             {
