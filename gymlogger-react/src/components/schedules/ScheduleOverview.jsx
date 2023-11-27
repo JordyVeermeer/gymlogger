@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import useSchedules from "../../api/schedules";
 import WeekSchedule from "./WeekSchedule";
+import '../schedules/schedules.css';
 
 const ScheduleOverview = () => {
     const { getSchedules } = useSchedules();
@@ -18,10 +19,10 @@ const ScheduleOverview = () => {
 
 
     return (
-        <div className="schedule_overview">
+        <div className="schedule-overview">
             <h1>Active schedule</h1>
             <WeekSchedule schedule={schedule} />
-            <h1>Your schedules</h1>
+            {/* <h1>Your schedules</h1>
             {
                 schedule && schedule.length > 0 &&
                 schedule.map(s => (
@@ -30,7 +31,7 @@ const ScheduleOverview = () => {
                         <p>{s.workout.name}</p>
                     </div>
                 ))
-             }
+             } */}
         </div>
     )
 }

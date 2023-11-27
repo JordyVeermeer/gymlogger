@@ -1,20 +1,25 @@
 
-const weekDays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+const weekDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 const WeekSchedule = ({schedule}) => {
 
+    const findWorkout = (day) => {
+        const workout = schedule.find((workout) => (workout.weekday.toLowerCase() === day.toLowerCase()));
+        if (workout) {
+            return workout.workout.name;
+        } else {
+            return 'rest';
+        }
+    };
+
     return (
-        <div>
+        <div className="week-schedule">
             {
                 weekDays.map((day) => (
                     <div>
-                        <span>{day}: </span>
+                        <div><b>{day}</b></div>
                         {
-                            schedule.map((workout) => {
-                                if (workout.weekday.toLowerCase() === day.toLowerCase()) {
-                                    return <span>{workout.workout.name}</span>
-                                } 
-                            })
+                            findWorkout(day)
                         }
                     </div>
                 ))

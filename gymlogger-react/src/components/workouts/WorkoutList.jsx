@@ -13,7 +13,7 @@ export default function WorkoutList() {
         <div className="workout-list">
             <h1>Workout list</h1>
             {/* <Link to={"/workouts/new"}><button>New workout</button></Link> */}
-            <CustomButton label={"New workout"} />
+            <CustomButton label={"new workout"} />
             {
                 workouts && 
                 workouts.map(w => (

@@ -1,0 +1,17 @@
+/* Schedule Overview */
+
+.schedule-overview {
+    padding: 2rem;
+}
+
+
+/* Week Schedule */
+
+.week-schedule {
+    background-color: #232728;
+    padding: 1rem;
+    border-radius: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
