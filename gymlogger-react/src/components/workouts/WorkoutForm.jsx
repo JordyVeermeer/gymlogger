@@ -51,7 +51,6 @@ export const WorkoutForm = () => {
     };
 
     return <div className="workout-form">
-        Dit is de workoutform!
         <form onSubmit={handleWorkout}>
             <label>
                 Name:

@@ -14,6 +14,8 @@ import { AuthenticationGuard } from './components/authentication/AuthenticationG
 import { WorkoutForm } from './components/workouts/WorkoutForm';
 import ScheduleOverview from './components/schedules/ScheduleOverview';
 import ExercisesOverview from './components/exercises/ExercisesOverview';
+import { EditSchedule } from './components/schedules/EditSchedule.jsx';
+import { ScheduleProvider } from './contexts/ScheduleContext.jsx';
 
 function App() {
   return (
@@ -31,6 +33,7 @@ function App() {
       >
         <ExerciseProvider>
           <WorkoutProvider>
+            <ScheduleProvider>
             <Routes>
               <Route path='/' element={<Homepage />} />
               {/* <Route path='/login/callback' element={<LoginCallback />} /> */}
@@ -43,6 +46,8 @@ function App() {
                 <Route path='/workouts' element={<AuthenticationGuard component={WorkoutList} />} />
                 <Route path='/workouts/new' element={<AuthenticationGuard component={WorkoutForm} />} />
                 <Route path='/schedules' element={<AuthenticationGuard component={ScheduleOverview} />} />
+                <Route path='/schedules/edit' element={<AuthenticationGuard component={EditSchedule} />} />
+
 
               </Route>
 
@@ -50,6 +55,7 @@ function App() {
 
               
             </Routes>
+            </ScheduleProvider>
           </WorkoutProvider>
         </ExerciseProvider>
       </Auth0Provider>

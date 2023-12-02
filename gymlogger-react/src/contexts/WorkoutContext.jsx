@@ -43,7 +43,7 @@ export const WorkoutProvider = ({ children }) => {
     }, [fetchWorkouts]);
 
     const value = useMemo(() => ({
-             workouts, createWorkout, removeWorkout
+        workouts, createWorkout, removeWorkout
     }), [workouts, createWorkout, removeWorkout]);
 
     return (

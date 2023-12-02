@@ -4,7 +4,7 @@ import { useCallback, useMemo } from "react";
 
 const baseUrl = `${process.env.REACT_APP_API_URL}/schedules`;
 
-const useSchedules = () => {
+export const useSchedules = () => {
     const { getAccessTokenSilently } = useAuth0();
 
     // GET schedules
@@ -18,8 +18,8 @@ const useSchedules = () => {
             console.log(err);
         });
 
-        console.log(res);
-        return res.data;
+        console.log("schedules result:" + JSON.stringify(res.data.workouts));
+        return res.data.workouts;
         
     }, [getAccessTokenSilently])
 
@@ -29,5 +29,3 @@ const useSchedules = () => {
 
     return scheduleApi;
 }
-
-export default useSchedules;

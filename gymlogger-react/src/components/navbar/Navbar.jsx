@@ -18,7 +18,7 @@ function NavbarItem({label, to, className, onClick}) {
 function Hamburger({navItems}) {
 
     const [hamburgerIsOpen, setHamburgerIsOpen] = useState(false);
-
+    
     const navigate = useNavigate();
 
     const toggleMenu = () => {
@@ -36,7 +36,7 @@ function Hamburger({navItems}) {
         <div className="hamburger">
             <div className="hamburger-icons">
                 <ArrowBackIosNew onClick={goBack} />
-                <img src={logo} alt='logo-gymlogger' />
+                <img src={logo} alt='logo-gymlogger' onClick={() => navigate('/dashboard')} />
                 <Menu onClick={toggleMenu} />
             </div>
             {

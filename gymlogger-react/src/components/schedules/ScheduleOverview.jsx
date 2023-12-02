@@ -1,22 +1,23 @@
-import { useCallback, useEffect, useState } from "react";
-import useSchedules from "../../api/schedules";
-import WeekSchedule from "./WeekSchedule";
+import { useCallback, useContext, useEffect, useState } from "react";
+import {useSchedules} from "../../api/schedules";
+import {WeekSchedule} from "./WeekSchedule";
+import { ScheduleContext } from "../../contexts/ScheduleContext";
 import '../schedules/schedules.css';
 
 const ScheduleOverview = () => {
-    const { getSchedules } = useSchedules();
-    const [ schedule, setSchedule ] = useState([]);
+    //const [ schedule, setSchedule ] = useState([]);
+    const { schedule } = useContext(ScheduleContext);
     
-    const fetchSchedules = useCallback(async () => {
+    /* const fetchSchedules = useCallback(async () => {
         const s = await getSchedules();
-        console.log(`schedules: ${JSON.stringify(s.workouts)}`);
-        setSchedule(s.workouts);
+        console.log(`schedules: ${JSON.stringify(s)}`);
+        setSchedule(s);
     }, [getSchedules])
 
     useEffect(() => {
        fetchSchedules();
     }, [fetchSchedules]);
-
+ */
 
     return (
         <div className="schedule-overview">
